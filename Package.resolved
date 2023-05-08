@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "colorizer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DariuszGulbicki/Colorizer",
+      "state" : {
+        "revision" : "8e9747fc55861a2969c721967f4a84b95ae5f716",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "logging-camp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DariuszGulbicki/Logging-Camp.git",
+      "state" : {
+        "revision" : "c80b86ecfde4c381996cd6476cc653358341741e",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
