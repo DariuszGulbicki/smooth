@@ -18,6 +18,12 @@ let package = Package(
         .library(
             name: "Templating",
             targets: ["Templating"]),
+        .library(
+            name: "StringUtils",
+            targets: ["StringUtils"]),
+        .library(
+            name: "Encoding",
+            targets: ["Encoding"]),
     ],
     dependencies: [
         .package(url: "https://github.com/DariuszGulbicki/Logging-Camp.git", .upToNextMajor(from: "1.0.0")),
@@ -42,6 +48,9 @@ let package = Package(
             ]),
         .target(
             name: "StringUtils",
+            dependencies: []),
+        .target(
+            name: "Encoding",
             dependencies: []),
     ]
 )
