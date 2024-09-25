@@ -1,11 +1,12 @@
 // swift-tools-version: 5.7
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
 import PackageDescription
 
 let package = Package(
     name: "Smooth",
     products: [
+        .library(
+            name: "Basis",
+            targets: ["Basis"]),
         .library(
             name: "Queueing",
             targets: ["Queueing"]),
@@ -24,12 +25,24 @@ let package = Package(
         .library(
             name: "Encoding",
             targets: ["Encoding"]),
+        .library(
+            name: "Concurrency",
+            targets: ["Concurrency"]),
+        .library(
+            name: "Caching",
+            targets: ["Caching"]
+            )
     ],
     dependencies: [
-        .package(url: "https://github.com/DariuszGulbicki/Logging-Camp.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/DariuszGulbicki/Logging-Camp.git", .upToNextMajor(from: "2.0.0")),
         .package(url: "https://github.com/DariuszGulbicki/Colorizer.git", .upToNextMajor(from: "1.0.0")),
     ],
     targets: [
+        .target(
+            name: "Basis",
+            dependencies: [
+                .product(name: "LoggingCamp", package: "Logging-Camp"),
+            ]),
         .target(
             name: "Structures",
             dependencies: []),
@@ -52,5 +65,14 @@ let package = Package(
         .target(
             name: "Encoding",
             dependencies: []),
+        .target(
+            name: "Concurrency",
+            dependencies: []),
+        .target(
+            name: "Caching",
+            dependencies: []),
+        .testTarget(
+            name: "SmoothTests",
+            dependencies: ["Basis", "Structures", "Queueing", "Templating", "Pathfinding", "StringUtils", "Encoding", "Concurrency"]),
     ]
 )

@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DariuszGulbicki/Logging-Camp.git",
       "state" : {
-        "revision" : "c80b86ecfde4c381996cd6476cc653358341741e",
-        "version" : "1.0.0"
+        "revision" : "a841bca965eeeef6979eeab40bd68bbe849dbb5c",
+        "version" : "2.1.0"
       }
     }
   ],
