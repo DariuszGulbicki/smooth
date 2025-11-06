@@ -17,8 +17,9 @@ public class Promise<T> {
     public func then(_ onFulfilled: @escaping (T) -> Void) -> Promise<T> {
         let promise = Promise<T>(resolver: resolver)
         promiseQueue.async {
-            let value = self.resolver()
-            onFulfilled(value)
+            // TODO: Fix this
+            //let value = self.resolver()
+            //onFulfilled(value)
         }
         return promise
     }
@@ -26,10 +27,11 @@ public class Promise<T> {
     public func `await`() -> T {
         let semaphore = DispatchSemaphore(value: 0)
         var value: T!
-        promiseQueue.async {
+        // TODO: Fix this
+        /*promiseQueue.async {
             value = self.resolver()
             semaphore.signal()
-        }
+        }*/
         semaphore.wait()
         return value
     }

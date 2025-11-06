@@ -1,4 +1,4 @@
-// swift-tools-version: 5.7
+// swift-tools-version: 6.0
 import PackageDescription
 
 let package = Package(
@@ -31,7 +31,15 @@ let package = Package(
         .library(
             name: "Caching",
             targets: ["Caching"]
-            )
+            ),
+        .library(
+            name: "Time",
+            targets: ["Time"]
+        ),
+        .library(
+            name: "Printer",
+            targets: ["Printer"]
+        )
     ],
     dependencies: [
         .package(url: "https://github.com/DariuszGulbicki/Logging-Camp.git", .upToNextMajor(from: "2.0.0")),
@@ -41,7 +49,7 @@ let package = Package(
         .target(
             name: "Basis",
             dependencies: [
-                .product(name: "LoggingCamp", package: "Logging-Camp"),
+                //.product(name: "LoggingCamp", package: "Logging-Camp"),
             ]),
         .target(
             name: "Structures",
@@ -71,8 +79,17 @@ let package = Package(
         .target(
             name: "Caching",
             dependencies: []),
+        .target(
+            name: "Time",
+            dependencies: [
+                .product(name: "LoggingCamp", package: "Logging-Camp"),
+            ]),
+        .target(
+            name: "Printer",
+            dependencies: [
+            ]),
         .testTarget(
             name: "SmoothTests",
-            dependencies: ["Basis", "Structures", "Queueing", "Templating", "Pathfinding", "StringUtils", "Encoding", "Concurrency"]),
+            dependencies: ["Basis", "Structures", "Queueing", "Templating", "Pathfinding", "StringUtils", "Encoding", "Concurrency", "Time"]),
     ]
 )

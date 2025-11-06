@@ -14,7 +14,8 @@ public class Daemon {
     public func start() {
         daemonQueue.async {
             while true {
-                self.daemon()
+                // TODO: Fix this
+                //self.daemon()
             }
         }
     }
